@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="jdbc.properties"/>
+    <typeAliases>
+		<typeAlias type="wanho.f5.project.admin.po.Admin" alias="Admin"/>
+		<typeAlias type="wanho.f5.project.admin.po.Nav" alias="Nav"/>
+		<typeAlias type="wanho.f5.project.user.po.User" alias="User"/>
+		<typeAlias type="wanho.f5.project.order.po.Order" alias="Order"/>
+	</typeAliases> 
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="wanho/f5/project/user/mapper/CollectMapper.xml"/>
+		<mapper resource="wanho/f5/project/user/mapper/ConsigneeMapper.xml"/>
+		<mapper resource="wanho/f5/project/user/mapper/RatingMapper.xml"/>
+		<mapper resource="wanho/f5/project/user/mapper/UlevelAndDiscountMapper.xml"/>
+		<mapper resource="wanho/f5/project/user/mapper/UserMapper.xml"/>
+		<mapper resource="wanho/f5/project/product/mapper/ProductDetailsMapper.xml"/>
+		<mapper resource="wanho/f5/project/product/mapper/ProductSeriesMapper.xml"/>
+		<mapper resource="wanho/f5/project/product/mapper/ProductTypeMapper.xml"/>
+		<mapper resource="wanho/f5/project/product/mapper/ProductMapper.xml"/>
+		<mapper resource="wanho/f5/project/product/mapper/ProductImagesMapper.xml"/>
+		<mapper resource="wanho/f5/project/order/mapper/CartMapper.xml"/>
+		<mapper resource="wanho/f5/project/order/mapper/CartDetailsMapper.xml"/>
+		<mapper resource="wanho/f5/project/order/mapper/OrderMapper.xml"/>
+		<mapper resource="wanho/f5/project/admin/mapper/AdminMapper.xml"/>
+		<mapper resource="wanho/f5/project/admin/mapper/NavMapper.xml"/>
+	</mappers>
+</configuration>
